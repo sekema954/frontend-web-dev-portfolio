@@ -1,0 +1,865 @@
+@import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ojuju", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+
+
+
+
+
+#container{
+    max-width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#home{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/space-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#home nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 10px 20px 0 20px;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
+    position: fixed;
+    top: 0;
+    z-index: 3000;
+}
+
+#navBar li a{
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .50s;
+}
+
+#navBar li a:hover{
+    color: purple;
+    text-shadow: 19px 10px 10px purple;
+}
+
+
+
+#navBar li{
+    list-style: none;
+    display: inline-block;
+}
+
+
+#navBar .logo p{
+    font-size: 30px;
+    color: white;
+    font-weight: 700;
+}
+
+.social-links{
+    display: inline-block;
+}
+
+.social-links .fa, .social-links-mobile .fa{
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    border: solid white;
+    border-radius: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.social-links .fa:hover, .social-links-mobile .fa:hover{
+    border: solid purple;
+    background-color: white;
+    color: black;
+}
+
+.connect{
+    display: inline-block;
+}
+
+.connect button{
+    width: 175px;
+    height: 45px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    border: solid white;
+    transition: all .50s;
+}
+
+.connect button:hover{
+    border: solid purple;
+    background-color: white;
+    color: black;
+    font-weight: 500;
+}
+
+#home-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+    position: absolute;
+    top: 15%;
+    justify-content: center;
+    align-items: center;
+}
+
+/**MEDIA QUERY TO SWITCH NAVBAR TO MOBILE VERSION */
+@media(max-width:1003px){
+    #navBar ul li, .social-links, .connect{
+        display: none;
+    }
+
+    #menuBar, #dropdownMenu{
+        display: inline-block !important;
+    }
+}
+/****_____****/
+
+#menuBar{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    margin: 8px;
+    background-color: purple;
+    transition: all .50s;
+}
+
+.bar1{
+    width: 30px;
+    height: 5px;
+}
+
+.bar2{
+    width: 45px;
+    height: 5px;
+}
+
+/****add animation for hambuger icon***/
+.change .bar1{
+    transform: translate(0, -4px)rotate(-45deg);  /****classlist element line 9 in index.js**/
+}
+                                   
+.change .bar2{
+    transform:  translate(0, -15px)rotate(45deg);
+    width: 30px;
+}
+
+#dropdownMenu{
+    position: fixed;
+    top: 4%;
+    right: 5%;
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+    z-index: 2000;
+}
+
+ 
+
+
+#dropdownMenu li{
+    list-style: none;
+    margin: 20px;
+    border-bottom: solid white;
+    height: 0;
+    opacity: 0;
+    transition: all .55s;
+}
+
+
+.makeVisible{
+    height: 37px !important;
+    opacity: 1 !important;   /**classlist element Line 13 in index.js***/
+}
+
+.social-links-mobile{
+    opacity: 0;
+    transition: all .50s;
+}
+
+
+.showLinks{
+    opacity: 1;  /***classlist element***  Line 10 in index.js***/
+}
+
+#dropdownMenu li a{
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    transition: all .50s;
+}
+
+
+#dropdownMenu li a:hover{
+    color: purple;
+}
+
+
+
+
+
+/****home section grid*****/
+
+#home-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    padding: 0 20px 0 20px;
+    width: 100%;
+}
+
+@media(max-width:778px){
+    #home-grid{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        padding: 0 20px 0 20px;
+        width: 100%;
+    } 
+
+    .animated .planet-icon{
+        display: none; 
+    }
+}
+
+.about-content .welcome{
+    border: solid white;
+    background: radial-gradient(circle at 10% 20%, rgb(134, 47, 199) 0%, rgb(235, 56, 137) 90%);
+    width: 250px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-content .welcome p{
+    color: white;
+    font-weight: 600;
+}
+
+.center-wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blank{
+    display: none; /***make home div content display none***/
+}
+
+.show{
+    display: inline-block;
+}
+
+.loss{
+    display: none;
+}
+
+.name h1{
+    color: white;
+    font-weight: 800;
+    font-size: 40px;
+}
+
+
+.origin p{
+    color: white;
+}
+
+.lets-connect-btn{
+    margin-top: 20px;
+}
+
+
+.lets-connect-btn a{
+    color: white;
+    text-decoration: none;
+}
+
+.lets-connect-btn .fa{
+    color: white;
+    border: solid white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.lets-connect-btn .fa:hover{
+    border: solid purple;
+    background-color: white;
+    color: black;
+}
+
+.animated{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animated iframe{
+    border: none;
+    width: 400px;
+    height: 400px;
+}
+
+
+
+/****skills****/
+#skills{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 10% 20%, rgb(134, 47, 199) 0%, rgb(235, 56, 137) 90%);
+    color: white;
+}
+
+.skills-wrapper{
+    width: 90%;
+    height: 90%;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
+    border-radius: 60px;
+    position: relative;
+    padding: 15px;
+}
+
+
+
+
+
+.skills-title, .skills-sub{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.skills-carousel{
+    flex: 1;
+    height: 300px;
+    margin-top: 20px;
+    position: relative;
+
+}
+
+.overflow-box{
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    scroll-behavior:smooth;
+}
+
+
+.skills-card{
+    flex-direction: row;
+    display: flex;
+    gap: 100px;
+
+}
+
+
+.skill-inner{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 25px;
+    position: relative;
+}
+
+.skill1{
+    background: conic-gradient(rgb(125, 42, 432)240deg, rgb(237, 237, 237)0deg);
+
+}
+
+.skill2{
+    background: conic-gradient(rgb(125, 42, 432)150deg, rgb(237, 237, 237)0deg);
+
+}
+
+
+.skill3{
+    background: conic-gradient(rgb(125, 42, 432)250deg, rgb(237, 237, 237)0deg);
+
+}
+
+
+.skill4{
+    background: conic-gradient(rgb(125, 42, 432)240deg, rgb(237, 237, 237)0deg);
+
+}
+
+.skill5{
+    background: conic-gradient(rgb(125, 42, 432)230deg, rgb(237, 237, 237)0deg);
+
+}
+
+
+.skill6{
+    background: conic-gradient(rgb(125, 42, 432)265deg, rgb(237, 237, 237)0deg);
+
+}
+
+
+.skill-inner p{
+    position: relative;
+    color: white;
+}
+
+.skill-inner::before{
+    content: "";
+    width: 150px;
+    height: 150px;
+    background-color: purple;
+    position: absolute; 
+    border-radius: 75px;
+}
+
+
+
+.skill-name{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.arrows{
+    margin-top: 50px;
+}
+
+
+.left-arrow{
+    position: absolute;
+    left: 10%;
+}
+
+
+.left-arrow .fa, .right-arrow .fa{ /***ADD ANIMATON TO ARROW BORDER***/
+    border: solid white;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .50s;
+    background-color: black;
+}
+
+.indicate{
+    animation: growAnimation .95s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes growAnimation{
+    100%{width: 40px !important;
+        height: 40px !important;
+        border-radius: 50px !important;
+    };
+
+    90%{
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+    }
+}
+
+
+.left-arrow .fa:hover, .right-arrow .fa:hover{
+    color: black;
+    background-color: white;
+    border: solid purple;
+}
+
+.right-arrow{
+    position: absolute;
+    right: 10%;
+}
+
+
+
+/*****projects section*****/
+#projects{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+    color: white;
+    padding: 0 20px 0 20px;
+}
+
+.projects-title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.projects-sub{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: solid white;
+}
+
+.changeBackground{
+    /****classlist to change tab background on click***/
+    background: radial-gradient(circle at 10% 20%, rgb(134, 47, 199) 0%, rgb(235, 56, 137) 90%) !important;
+
+}
+
+.projects-tab{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+ 
+
+
+.tab1{
+    width: 200px;
+    height: 40px;
+    border-radius: 50px 0 0 50px;
+}
+
+
+
+.tab2{
+    width: 200px;
+    height: 40px;
+}
+
+.tab3{
+    width: 200px;
+    height: 40px;
+    border-radius: 0 50px 50px 0;
+}
+
+.projects-grid{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr ;
+    gap: 5px;
+}
+
+#second-tab{
+    display: none ;
+}
+
+#third-tab{
+    display: none;
+}
+
+
+/***media query to adjust project grid to fit screen size on smaller devices***/
+@media(max-width: 451px){
+    .projects-grid{
+        height: 100%;
+        margin-top: 20px;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 1fr ;
+    } 
+}
+
+.project-card{
+    width: 100%;
+    height: 210px;
+    border: solid 2px white;
+    border-radius: 20px;
+    transition: all .50s;
+
+}
+
+.leave{
+    opacity: .20;
+}
+
+
+
+
+/****contact section***/
+
+#contact{
+    width: 100%;
+    background-color: #6617cb;
+    background-image: linear-gradient(315deg, #6617cb 0%, #cb218e 74%);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    color: white;
+    padding: 0 20px 0 20px;
+}
+
+@media(max-width: 975px){
+    #contact{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .contact-lottie iframe{
+        width: 250px !important;
+        height: 250px !important;
+    } 
+}
+
+.contact-lottie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact iframe{
+    border: none;
+    width: 500px;
+    height: 500px;
+}
+
+.contact-title{
+    margin-top: 60px;
+    padding-left: 20px;
+}
+
+#contact input{
+    width: 220px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: solid white;
+    padding-left: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+#contact input::placeholder, #contact textarea::placeholder{
+    color: white;
+}
+
+#contact input:focus, #contact textarea:focus{
+    outline: none;
+}
+
+#contact textarea{
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: transparent;
+    border: solid white;
+    color: white;
+    font-weight: 700;
+}
+
+#contact-form>div{
+    margin: 20px;
+}
+
+#contact input[type=submit]{
+    width: 120px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 0;
+    padding: 0;
+    transition: all .50s;
+}
+
+
+#contact input[type=submit]:hover{
+    background-color: purple;
+    color: white;
+}
+
+
+/***copyright section****/
+
+#copyright{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 5px 20px;
+}
+
+
+#copyright .social-links{
+    display: inline-block !important;
+}
+.watermark{
+    color: white;
+}
+
+#copyright .logo{
+    color: white;
+}
+
+
+/****************projects******/
+
+.projects-card1{
+    background-color: black;
+    background-image: url(images/nail-site.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.lang{
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    text-align: center;
+    transition: all .50s;
+}
+
+.lang p{
+    color: red;
+}
+
+
+.projects-card2{
+    background-color: black;
+    background-image: url(images/hair-site.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.projects-card3{
+    background-color: black;
+    background-image: url(images/massage-site.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.projects-card4{
+    background-color: black;
+    background-image: url(images/daycare-site.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+
+
+.projects-card5{
+    background-color: black;
+    background-image: url(images/eventbrite-site.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+
+
+.projects-card6{
+    background-color: black;
+    background-image: url(images/weather-site.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+
+
+.projects-card7{
+    background-color: black;
+    background-image: url(images/ecommerce-site.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+
+
+.projects-card8{
+    background-color: black;
+    background-image: url(images/movie-site.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+
+
+.projects-card9{
+    background-color: black;
+    background-image: url(images/nail-site.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
