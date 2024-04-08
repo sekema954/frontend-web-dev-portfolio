@@ -1,21 +1,13 @@
 //function to animate hamburger icon
+const menuBar = document.getElementById("menuBar");
+const dropdown = document.querySelector(".blank-canvas");
+const linkWrapper = document.querySelector(".link-wrapper");
+menuBar.addEventListener("click", ()=>{
+  menuBar.classList.toggle("change");
+  dropdown.classList.toggle("changeHeight");
+  linkWrapper.classList.toggle("show-wrapper");
+})
 
-
-function MenuClicked(){
-    const menuBar = document.getElementById("menuBar");
-    menuBar.addEventListener("click", () => {
-        const dropdownIcon = document.querySelectorAll(".mylinks");
-        const socialLinks = document.querySelector(".social-links-mobile"); 
-        const centerWrapper = document.querySelector(".center-wrapper");
-        menuBar.classList.toggle("change");
-        socialLinks.classList.toggle("showLinks");
-        //make dropdown menu animate on click
-        for(let i=0; i<dropdownIcon.length; i++) {
-            dropdownIcon[i].classList.toggle("makeVisible");
-      }
-    })
-}
-MenuClicked();
 
 
 
