@@ -109,5 +109,8 @@ projectContainers.forEach(projectContainer =>{
   
 
 
-})
+});
+
+
+//make menubar dissappear when link is clicked
 

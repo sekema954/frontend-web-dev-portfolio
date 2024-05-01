@@ -83,6 +83,13 @@
 }
 
 
+@media(min-width:1004px){
+    .blank-canvas{
+        display: none;
+    }
+}
+
+
 .link-wrapper{
     margin-top: 40px;
     transition: all .50s;
@@ -192,12 +199,18 @@
         display: inline-block !important;
     }
 }
+
+
 /****_____****/
 
 #menuBar{
     display: none;
     cursor: pointer;
     margin-top: 5px;
+}
+
+.hidden{
+    display: none !important;
 }
 
 .bar{
@@ -567,6 +580,10 @@
     align-items: center;
     text-align: center;
     border: solid white;
+}
+
+.active-tab{
+    background: radial-gradient(circle at 10% 20%, rgb(134, 47, 199) 0%, rgb(235, 56, 137) 90%) !important;
 }
 
 .changeBackground{
