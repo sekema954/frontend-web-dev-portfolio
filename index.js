@@ -96,20 +96,6 @@ tabs.forEach(tab => {
 });
 
 
-//function to hide project background image and show description.
-
-const projectContainers = document.querySelectorAll(".project-card");
-projectContainers.forEach(projectContainer =>{
-    const langs = document.querySelectorAll(".lang");
-    projectContainer.addEventListener("click", () => {
-        projectContainer.classList.toggle("leave");
-    })
-
-    //make lang classlist visible
-  
-
-
-});
 
 
 //make menubar dissappear when link is clicked
