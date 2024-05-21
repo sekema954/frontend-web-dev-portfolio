@@ -557,6 +557,7 @@
 /*****projects section*****/
 #projects{
     width: 100%;
+    min-height: 70%;
     position: relative;
     background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
     color: white;
@@ -804,6 +805,7 @@
     justify-content: center;
     text-align: center;
     transition: all .50s;
+    background-color: transparent;
 }
 
 .lang p{
